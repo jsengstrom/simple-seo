@@ -1,6 +1,6 @@
 <?php
 
-  function eg_create_sitemap() {
+  function seo_create_sitemap() {
     $postsForSitemap = get_posts(array(
       'numberposts' => -1,
       'orderby' => 'modified',
@@ -34,7 +34,7 @@
     fclose($fp);
   }
   
-  add_action("publish_post", "eg_create_sitemap");
-  add_action("publish_page", "eg_create_sitemap");
-  add_action("trash_post",   "eg_create_sitemap");
-  add_action("untrash_post", "eg_create_sitemap");
+  add_action("publish_post", "seo_create_sitemap");
+  add_action("publish_page", "seo_create_sitemap");
+  add_action("trash_post",   "seo_create_sitemap");
+  add_action("untrash_post", "seo_create_sitemap");
