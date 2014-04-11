@@ -1,10 +1,7 @@
 <?php
-  
-  add_action("publish_post", "seo_create_sitemap");
-  add_action("publish_page", "seo_create_sitemap");
-  
-  function seo_create_sitemap() {
-    $sitemaplist = get_posts(array(
+
+  function eg_create_sitemap() {
+    $postsForSitemap = get_posts(array(
       'numberposts' => -1,
       'orderby' => 'modified',
       'post_type'  => array('post','page'),
@@ -18,7 +15,7 @@
         '<priority>1.00</priority>' .
       '</url>';
     
-    foreach($sitemaplist as $post) {
+    foreach($postsForSitemap as $post) {
       setup_postdata($post);
       
       $postdate = explode(" ", $post->post_modified);
@@ -32,7 +29,12 @@
     
     $sitemap .= '</urlset>';
     
-    $forcepath = fopen(ABSPATH . "sitemap.xml", 'w');
-    fwrite($forcepath, $sitemap);
-    fclose($forcepath);
+    $fp = fopen(ABSPATH . "sitemap.xml", 'w');
+    fwrite($fp, $sitemap);
+    fclose($fp);
   }
+  
+  add_action("publish_post", "eg_create_sitemap");
+  add_action("publish_page", "eg_create_sitemap");
+  add_action("trash_post",   "eg_create_sitemap");
+  add_action("untrash_post", "eg_create_sitemap");
