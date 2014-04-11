@@ -1,4 +1,4 @@
-<?php if ( is_home() ) { ?>
+<?php if ( is_front_page() ) { ?>
  
   <title><?php bloginfo('name'); ?></title>
   <meta name="description" content="<?php bloginfo('description'); ?>">
