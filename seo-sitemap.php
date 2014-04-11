@@ -12,7 +12,11 @@
     ));
     
     $sitemap = '<?xml version="1.0" encoding="UTF-8"?>';
-    $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' .
+      '<url>' .
+        '<loc>'. get_bloginfo('wpurl') .'</loc>' .
+        '<priority>1.00</priority>' .
+      '</url>';
     
     foreach($sitemaplist as $post) {
       setup_postdata($post);
