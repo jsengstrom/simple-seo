@@ -9,10 +9,10 @@
     ));
     
     $sitemap = '<?xml version="1.0" encoding="UTF-8"?>';
-    $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' .
-      '<url>' .
-        '<loc>'. get_bloginfo('wpurl') .'</loc>' .
-        '<priority>1.00</priority>' .
+    $sitemap = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'.
+      '<url>'.
+        '<loc>'. get_bloginfo('wpurl') .'</loc>'.
+        '<priority>1.00</priority>'.
       '</url>';
     
     foreach($postsForSitemap as $post) {
@@ -37,4 +37,6 @@
   add_action("publish_post", "seo_create_sitemap");
   add_action("publish_page", "seo_create_sitemap");
   add_action("trash_post",   "seo_create_sitemap");
+  add_action("trash_page",   "seo_create_sitemap");
   add_action("untrash_post", "seo_create_sitemap");
+  add_action("untrash_page", "seo_create_sitemap");
