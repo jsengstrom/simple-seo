@@ -7,7 +7,7 @@ Built upon ACF (http://www.advancedcustomfields.com) by Elliot Condon. This modu
 
 ## Installation
 
-First, clone this direcory to the root of your theme. Then add this line inside the ```<head>``` of your template, located in 'header.php': 
+First, clone this direcory to the root of your theme. Make sure that you have the ACF plugin activated, then add this line inside the ```<head>``` of your template, located in 'header.php': 
 
 ```
 <?php include (TEMPLATEPATH . '/simple-seo/seo-meta.php' ); ?>
@@ -16,10 +16,8 @@ First, clone this direcory to the root of your theme. Then add this line inside 
 Next, add this line into 'functions.php':
 
 ```
-<?php require_once('/simple-seo/seo-functions.php'); ?>
+<?php require_once('simple-seo/seo-functions.php'); ?>
 ```
-
-Finally, import 'acf-import.json' to the ACF plugin. Head over to a post or page and you should see the Simple SEO field box below the WYSIWYG editor.
 
 * * *
 
