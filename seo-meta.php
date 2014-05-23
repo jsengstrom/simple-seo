@@ -18,7 +18,6 @@
     echo "<title>" . get_bloginfo('name') . "</title>";                                  // echo the blog title (in settings)
     echo "<meta name='description' content='" .  get_bloginfo('description') . "'>";     // echo the blog description (in settings)
     
-    
   /* pages, posts & static front page */    
   } elseif ( is_page() || is_single() ) {                                                // if you DO have astatic front page, plus other posts & pages
     
@@ -50,7 +49,6 @@
       echo "<meta name='description' content='" .  get_bloginfo('name') . "'>";          // pull it into our description (no fallback needed)
     }
     
-    
   /* all other page types (eg, 404, search, archives) */  
   } else {
     
@@ -60,7 +58,6 @@
     echo "</title>";                                                                     // close the <title>
     
   }
-  
   
   /* if user chooses to hide the page from search engines */  
   if ( is_search() || get_field('private_page') ) {
