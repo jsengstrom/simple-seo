@@ -1,6 +1,13 @@
-<?php 
+<?php
   
-  require_once('seo-sitemap.php');
+  /*
+  
+  This file generates our custom fields, as exported from the
+  Advanced Custom Fields plugin. There is no need do anything
+  with this. It is included within 'seo-functions.php'
+  
+  */ 
+  
   
   if( function_exists('register_field_group') ):
   
@@ -8,6 +15,7 @@
     'key' => 'group_533d8805cdba7',
     'title' => 'Simple SEO',
     'fields' => array (
+      /* set the General tab */
       array (
         'key' => 'field_5342821f6d723',
         'label' => 'General',
@@ -18,6 +26,7 @@
         'required' => 0,
         'conditional_logic' => 0,
       ),
+      /* set our <title> field */
       array (
         'key' => 'field_533d880cc87b7',
         'label' => 'Meta Title',
@@ -36,6 +45,7 @@
         'readonly' => 0,
         'disabled' => 0,
       ),
+      /* set our <description> field */
       array (
         'key' => 'field_533d889dc87b8',
         'label' => 'Meta Description',
@@ -53,6 +63,7 @@
         'readonly' => 0,
         'disabled' => 0,
       ),
+      /* set the advanced tab */
       array (
         'key' => 'field_5342822e6d724',
         'label' => 'Advanced',
@@ -63,6 +74,7 @@
         'required' => 0,
         'conditional_logic' => 0,
       ),
+      /* checkbox to hide page from search engines */
       array (
         'key' => 'field_53428187732fb',
         'label' => 'Private Page',
@@ -76,6 +88,7 @@
         'default_value' => 0,
       ),
     ),
+    /* set the post types to display settings on */
     'location' => array (
       array (
         array (
@@ -91,20 +104,15 @@
           'value' => 'page',
         ),
       ),
-      array (
-        array (
-          'param' => 'post_type',
-          'operator' => '==',
-          'value' => 'snippets',
-        ),
-      ),
+      /* add additional post types here */
     ),
-    'menu_order' => 100,
-    'position' => 'normal',
+    /* field group settings */
+    'menu_order' => 100,                  // importance on edit page - higher numbers are closer to the top
+    'position' => 'normal',               // position on edit page - normal, high, or sidebar
     'style' => 'default',
     'label_placement' => 'top',
     'instruction_placement' => 'field',
     'hide_on_screen' => '',
   ));
-
+  
   endif;
